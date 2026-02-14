@@ -17,8 +17,9 @@ body {
     gap: 10px;
     align-items: center;
     position: sticky;
-    top: 0;
+    top: 0%;
     background-color: white;
+    z-index: 1;
 }
 
 .navbar__s1__title {
@@ -74,6 +75,35 @@ body {
     transform: scale(0.9);
 }
 
+.navbar__s4 {
+    display: none;
+
+}
+
+/* my leraning */
+
+.mylearning {
+    position: relative;
+    cursor: pointer;
+}
+
+.mylearning__popup {
+    position: absolute;
+    border: solid black 1px;
+    background-color: white;
+    width: 100px;
+    display: none;
+    right: 0;
+    top: 150%;
+    padding: 15px;
+
+
+}
+
+.mylearning:hover .mylearning__popup {
+    display: block;
+}
+
 .categories {
     display: flex;
     padding: 10px;
@@ -111,13 +141,13 @@ body {
 
 .sale-image_offer {
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 10%;
+    left: 10%;
     color: black;
     border: solid black 2px;
     background-color: aliceblue;
     padding: 2%;
-    animation: slideUp 1s ease-out forwards;
+    animation: slideUp 2s ease-out forwards;
 }
 
 .recommended {
@@ -133,7 +163,9 @@ body {
 }
 
 .course-card {
-    width: 270px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border-radius: 5px;
@@ -217,7 +249,7 @@ body {
 .footer__one {
     display: flex;
     gap: 10px;
-
+    justify-content: space-around;
 }
 
 .footer__one p {
@@ -239,21 +271,150 @@ body {
 }
 
 
+/* Side Navbar */
+.side-navbar {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -60%;
+    padding: 20px;
+    z-index: 10;
+    transition: left 0.5s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.side-navbar-links {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.side-navbar-links i {
+    cursor: pointer;
+}
+
+.side-navbar__link {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-navbar__link a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.side-navbar__link a:hover {
+    color: #A435f0;
+}
+
+
 @media screen and (max-width: 768px) {
     body {
-        font-size: 10px;
+        font-size: 14px;
+        /* Slightly larger base font for readability */
     }
 
     .navbar__s2 {
-        width: 40%;
+        display: none;
+        /* Hide search bar on tablet/mobile by default or adjust width */
+    }
+
+    .navbar__s3 {
+        display: none;
+        /* Hide icons, show hamburger instead */
+    }
+
+    .navbar__s4 {
+        display: block;
+        /* Show hamburger menu */
+        cursor: pointer;
+    }
+
+    /* Sale Image Responsive */
+    .sale-image_offer {
+        width: 60%;
+        font-size: 12px;
+        top: 10%;
+        left: 5%;
+        padding: 10px;
+    }
+
+    .sale-image_offer h2 {
+        font-size: 16px;
+    }
+
+    /* Course Cards */
+    .recommended__container,
+    .populer__container,
+    .topics__container {
+        justify-content: center;
+        /* Center cards on smaller screens */
     }
 
     .course-card {
-        width: 45%;
+        flex-basis: 40%;
+        /* 2 cards per row on tablet */
+    }
+
+    .topics__container p {
+        flex-basis: 30%;
+    }
+
+    .footer__one {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        height: 60px;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .sale-image_offer {
+        position: static;
+        /* Stack offer below image on very small screens */
+        width: 100%;
+        background-color: #f0f0f0;
+        border: none;
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
+        /* padding inside width */
+        animation: none;
+        /* Remove animation if it causes layout shift issues on load */
+    }
+
+    .sale-image img {
+        display: block;
+        /* Remove default inline spacing */
+    }
+
+    .course-card {
+        flex-basis: 90%;
+        /* 1 card per row on mobile */
     }
 
     .topics__container p {
         flex-basis: 45%;
+    }
+
+    .footer__one {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__two {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -261,12 +422,12 @@ body {
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(0.8);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
 
