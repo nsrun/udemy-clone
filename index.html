@@ -33,10 +33,22 @@
 
         <div class="navbar__s3">
             <p>Coueses</p>
-            <p>My Learning</p>
+            <!-- <p>My Learning</p> -->
+            <div class="mylearning">
+                <p>My Learning</p>
+                <div class="mylearning__popup">
+                    <p> you did not purchase any course yet</p>
+                </div>
+            </div>
             <i class="fa-solid fa-cart-shopping"></i>
             <i><i class="fa-solid fa-bell"></i></i>
             <i class="fa-solid fa-user"></i>
+        </div>
+
+
+
+        <div class="navbar__s4">
+            <i class="fa fa-bars" aria-hidden="true" onclick="showSideNavbar()"></i>
         </div>
     </div>
 
@@ -192,6 +204,21 @@
 
     </div>
 
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <div class="side-navbar-links">
+            <i class="fa-solid fa-xmark" onclick="closeSideNavbar()"></i>
+        </div>
+        <div class="side-navbar__link">
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">My Learning</a>
+            <a href="#">Cart</a>
+            <a href="#">Notifications</a>
+            <a href="#">Account</a>
+        </div>
+    </div>
+
     <!--Footer-->
     <div class="footer">
         <div class="footer__one">
@@ -213,6 +240,14 @@
 
             </div>
 
+            <div class="footer__one__s3">
+                <p>Terms</p>
+                <p>Privacy Policy</p>
+                <p>Cookie Settings</p>
+                <p>Sitemap</p>
+                <p>Accessibility Statement</p>
+            </div>
+
         </div>
         <div class=" footer__two">
             <h1>Udemy</h1>
@@ -222,6 +257,7 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
