@@ -24,9 +24,4 @@ This project is a front-end clone of Udemy, built using HTML and CSS. It mimics 
    ```
 2. Open `index.html` in your browser to view the project.
 
-## License
-This project is for educational purposes. Feel free to customize and expand upon it!
 
----
-
-**Note:** Replace the placeholder link with your actual GitHub repository URL and demo link if available.
